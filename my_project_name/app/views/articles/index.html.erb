@@ -16,7 +16,7 @@
       <td><%= article.text %></td>
       <td>
         <% article.categories.each do |category| %>
-          <%= category.title %></td>
+          {<%= category.title %>}
         <% end %>
       </td>
       <td><%= link_to 'Show', article_path(article) %></td>
@@ -30,12 +30,19 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Articles</th>
     <th></th>
   </tr>
  
   <% @categories.each do |category| %>
     <tr>
       <td><%= category.title %></td>
+      <td>
+        <% category.articles.each do |article| %>
+          {<%= article.title %>}
+        <% end %>
+      </td>
+    </tr>
   <% end %>
-  </tr>
+  
 </table>
