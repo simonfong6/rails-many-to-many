@@ -38,3 +38,12 @@ Create your database before running migrations
 ```
 bundle exec rails db:create
 ```
+
+# Models
+
+rails generate model Article title:string text:text
+rails generate model Comment commenter:string body:text article:references
+rails generate model Category title:string articles:references
+
+
+
