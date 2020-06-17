@@ -32,7 +32,13 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
    
+    puts params
     if @article.update(article_params)
+      if params.has_key?(:categoryId)
+        @category = Category.find(params[:categoryId])
+        @article.categories << @category
+        @article.save
+      end
       redirect_to @article
     else
       render 'edit'
