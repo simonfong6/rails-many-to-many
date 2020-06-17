@@ -9,7 +9,9 @@
 </p>
 
 <h2>Categories</h2>
-<%= render @article.categories %>
+<% @article.categories.each do |category| %>
+  <%= category.title %></td>
+<% end %>
  
 <h2>Comments</h2>
 <%= render @article.comments %>
